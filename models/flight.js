@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const flightSchemma = new mongoose.Schema({
   airline: {
     type: String,
-    enum: ["American", "Southwest", "United"],
+    enum: ["american", "southwest", "united"],
     require: true,
   },
 
-  fightNo: {
+  flightNo: {
     type: Number,
     min: 10,
     max: 9999,
