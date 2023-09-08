@@ -5,7 +5,6 @@ function New({ airlineErr = null, flightErr = null }) {
   const aError = airlineErr;
   const fError = flightErr;
 
-  
   const bookingDate = new Date().toISOString().slice(0, 16);
   const airports = ["AUS", "DAL", "LAX", "SAN", "SEA"];
 
@@ -17,7 +16,7 @@ function New({ airlineErr = null, flightErr = null }) {
           <label>Airport</label>
           <select
             name='airport'
-            className='cursor-pointer p-3 text-xl rounded-lg'
+            className='cursor-pointer p-3 rounded-lg bg-[#09507C] text-white'
           >
             <option value='Select Airport'>Select Airport...</option>
             {airports.map((airport) => (
@@ -36,7 +35,7 @@ function New({ airlineErr = null, flightErr = null }) {
             type='text'
             name='airline'
             required
-            className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none text-xl p-2'
+            className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none  p-2'
           />
           <span
             className={
@@ -51,7 +50,7 @@ function New({ airlineErr = null, flightErr = null }) {
             type='text'
             name='flightNo'
             required
-            className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none text-xl p-2'
+            className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none  p-2'
           />
           <span
             className={
@@ -67,13 +66,13 @@ function New({ airlineErr = null, flightErr = null }) {
             name='departs'
             defaultValue={bookingDate}
             required
-            className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none text-xl p-2 mb-8'
+            className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none  p-2 mb-8'
           />
 
           <input
             type='submit'
             value='Create Flight'
-            className='border-2 border-gray-300 focus:border-gray-500 rounded-md w-fit outline-none text-xl p-2 hover:bg-[#09507C] hover:text-white cursor-pointer'
+            className='border-2 border-gray-300 focus:border-gray-500 rounded-md w-fit outline-none  p-2 hover:bg-[#09507C] hover:text-white cursor-pointer'
           />
         </div>
       </form>

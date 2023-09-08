@@ -13,19 +13,21 @@ const DefaultLayout = ({ title = "Flights", children }) => {
           <h1 className='font-bold text-3xl text-[#09507C] mb-4'>
             <a href='/'>Flightz!</a>
           </h1>
-          <a
-            href='/flights/'
-            className='ml-auto font-bold p-2 hover:bg-[#09507C] hover:text-white rounded-lg'
-          >
-            View Departures
-          </a>
-
-          <a
-            href='/flights/new'
-            className='font-bold p-2 hover:bg-[#09507C] hover:text-white rounded-lg'
-          >
-            Create New Flight
-          </a>
+          <section className="ml-auto flex flex-end items-center">
+            <a
+              href='/flights/'
+              className='ml-auto font-bold p-[0.5em] hover:bg-[#09507C] hover:text-white rounded-lg'
+            >
+              View Departures
+            </a>
+            
+            <a
+              href='/flights/new'
+              className='font-bold p-[0.5em] hover:bg-[#09507C] hover:text-white rounded-lg'
+            >
+              Create New Flight
+            </a>
+          </section>
         </nav>
         <hr className='mb-4 border-gray-500' />
         {children}

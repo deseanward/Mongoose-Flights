@@ -2,7 +2,16 @@ const React = require("react");
 const { default: DefaultLayout } = require("./layout/layout");
 
 function Show({ flight }) {
-  // const flights = allFlights.allFlights;
+  const logos = {
+    united:
+      "https://theoagroup.org/wp-content/uploads/2021/12/united-airlines-logo_2.png",
+
+    american:
+      "https://s202.q4cdn.com/986123435/files/doc_downloads/logos/american-airlines/aa_aa__vrt_rgb_grd_pos.png",
+
+    southwest:
+      "https://logos-world.net/wp-content/uploads/2020/10/Southwest-Airlines-Emblem.png",
+  };
 
   // Formatting of Flight Airline display
   const capitalize = (flight) => {
@@ -21,6 +30,7 @@ function Show({ flight }) {
 
   return (
     <DefaultLayout>
+      <h2 className='font-bold text-2xl mb-4'>Flight Details</h2>
       <div className='flex gap-12'>
         <div className='w-[600px] rounded-md'>
           {flight ? (
@@ -37,6 +47,15 @@ function Show({ flight }) {
                 <section>
                   <h2 className='font-bold'>Airline</h2>
                   {flight.airline}
+                  <section>
+                    <span className='flex items-center gap-2'>
+                      <img
+                        src={logos[flight.airline.toLowerCase()]}
+                        alt=''
+                        className='absolute h-16 ml-[10%]'
+                      />
+                    </span>
+                  </section>
                 </section>
               </div>
               <div className='grid grid-cols-2'>
@@ -59,11 +78,9 @@ function Show({ flight }) {
                   <label className='font-bold'>Destinations</label>
                   <select
                     name='airport'
-                    className='cursor-pointer p-3 rounded-lg'
+                    className='cursor-pointer p-3 rounded-lg bg-[#09507C] text-white'
                   >
-                    <option value='Select Airport' selected>
-                      Select Desination...
-                    </option>
+                    <option value='Select Airport'>Select Desination...</option>
                     {destinations.map((destination) => (
                       <option
                         key={destination}
@@ -106,7 +123,7 @@ function Show({ flight }) {
           )}
         </div>
 
-        <div id='right-side' className="border-l-2 pl-8">
+        <div id='right-side' className='border-l-2 pl-8'>
           <h2 className='font-bold'>Current Destinations</h2>
           {flight.destinations.length > 0
             ? flight.destinations.map((desc, idx) => {
@@ -119,7 +136,7 @@ function Show({ flight }) {
                       </section>
 
                       <span className='font-bold'>Arrival: </span>
-                      {desc.arrival.toISOString().slice(0, 16)}
+                      {desc.arrival.toUTCString()}
                     </p>
                   </div>
                 );
