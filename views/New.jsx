@@ -5,6 +5,12 @@ function New({ airlineErr = null, flightErr = null }) {
   const aError = airlineErr;
   const fError = flightErr;
 
+  // Default flight Booking Date
+  let bookingDate = new Date().toISOString().slice(0, 16);
+
+
+  console.log(bookingDate);
+
   return (
     <DefaultLayout>
       <h2 className='font-bold text-2xl'>Create Flight</h2>
@@ -17,7 +23,11 @@ function New({ airlineErr = null, flightErr = null }) {
             required
             className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none text-xl p-2'
           />
-          <span className={aError === null ? 'hidden' : 'flex text-red-500 text-md mb-4' }>
+          <span
+            className={
+              aError === null ? "hidden" : "flex text-red-500 text-md mb-4"
+            }
+          >
             {aError}
           </span>
 
@@ -28,21 +38,22 @@ function New({ airlineErr = null, flightErr = null }) {
             required
             className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none text-xl p-2'
           />
-          <span className={fError === null ? 'hidden' : 'flex text-red-500 text-md mb-4' }>
+          <span
+            className={
+              fError === null ? "hidden" : "flex text-red-500 text-md mb-4"
+            }
+          >
             {fError}
           </span>
 
-          <label>Today's Date</label>
+          <label>Booking Date</label>
           <input
             type='datetime-local'
             name='departs'
+            defaultValue={bookingDate}
             required
-            className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none text-xl p-2 mb-4'
+            className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none text-xl p-2 mb-8'
           />
-
-          <span className='font-bold mb-8'>
-            Will depart on: <span></span>
-          </span>
 
           <input
             type='submit'
