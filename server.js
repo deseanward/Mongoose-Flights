@@ -7,7 +7,7 @@ const Flight = require("./models/flight");
 const methodOverride = require("method-override");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // ***** Configure the App ***** //
 app.set("view engine", "jsx");
