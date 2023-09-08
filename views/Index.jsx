@@ -15,13 +15,13 @@ function Flights(allFlights) {
 
   return (
     <DefaultLayout>
-      <div className="w-[600px] p-4 rounded-md">
+      <div className="w-[600px] rounded-md">
         {flights ? (
           flights.map((flight) => {
             flight = capitalize(flight);
 
             return (
-              <div key={flight._id} className='flex flex-col text-xl gap-y-2 mb-4 pb-4 border-b border-gray-300'>
+              <div key={flight._id} className='flex flex-col text-xl gap-y-2 mb-4 pb-6 border-b border-gray-300'>
                 <section>
                   <h2 className='font-bold text-xl'>Airline</h2>
                   {flight.airline}

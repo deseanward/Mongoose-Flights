@@ -8,12 +8,21 @@ const DefaultLayout = ({ title = "Flights", children }) => {
         <script src='https://cdn.tailwindcss.com'></script>
       </head>
 
-      <body className='w-full h-screen border-2 py-4 px-8 flex justify-center'>
-        <nav className='flex gap-x-2 mb-4'>
-          <h1 className='font-bold text-3xl text-[#09507C] mb-4'>Flightz!</h1>
+      <body className='h-screen py-4 px-8 flex justify-center'>
+        <nav className='w-[600px] flex gap-x-2 mb-4'>
+          <h1 className='font-bold text-3xl text-[#09507C] mb-4'>
+            <a href='/'>Flightz!</a>
+          </h1>
+          <a
+            href='/flights/'
+            className='ml-auto font-bold rounded-lg p-2 hover:bg-[#09507C] hover:text-gray-300'
+          >
+            View Departures
+          </a>
+
           <a
             href='/flights/new'
-            className='ml-auto border-2 rounded-lg p-2 hover:bg-[#09507C] hover:text-gray-300'
+            className='font-bold rounded-lg p-2 hover:bg-[#09507C] hover:text-gray-300'
           >
             Create New Flight
           </a>

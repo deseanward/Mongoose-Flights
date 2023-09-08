@@ -58,7 +58,7 @@ function New({ airlineErr = null, flightErr = null }) {
           <input
             type='submit'
             value='Create Flight'
-            className='border-2 border-gray-300 focus:border-gray-500 rounded-md w-fit outline-none text-xl p-2 hover:bg-gray-500 hover:text-white cursor-pointer'
+            className='border-2 border-gray-300 focus:border-gray-500 rounded-md w-fit outline-none text-xl p-2 hover:bg-[#09507C] hover:text-white cursor-pointer'
           />
         </div>
       </form>

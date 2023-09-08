@@ -19,14 +19,16 @@ app.use(express.json());
 
 // ***** View Routes ***** //
 app.get("/", (req, res) => {
-  res.send("<h1>Welcome to De Sean's Destiny</h1>");
+  res.render("Landing");
 });
 
 // ---- Get all flights ---- //
 app.get("/flights", async (req, res) => {
   try {
-    const allFlights = await Flight.find({});
-    res.render("Index", {allFlights});
+    const allFlights = await Flight.find({}).sort({
+      departs: 1,
+    });
+    res.render("Index", { allFlights });
   } catch (err) {
     console.log("There was an error: ", err);
   }
