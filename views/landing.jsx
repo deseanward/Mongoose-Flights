@@ -9,7 +9,12 @@ const Landing = () => {
           WELCOME TO <span className='text-[#09507C]'>FLIGHTZ!</span>
         </h1>
         <p className='font-bold text-2xl'>
-          <a href='/flights' className="p-4 hover:bg-[#09507C] hover:text-white rounded-lg">ENTER</a>
+          <a
+            href='/flights'
+            className='p-4 hover:bg-[#09507C] hover:text-white rounded-lg'
+          >
+            ENTER
+          </a>
         </p>
       </div>
     </DefaultLayout>
