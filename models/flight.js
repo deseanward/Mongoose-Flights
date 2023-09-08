@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const destinationsSchema = mongoose.Schema({
   airport: {
     type: String,
-    enum: ["aus", "dal", "lax", "san", "sean"],
+    enum: ["SAN", "DAL", "LAX", "SAN", "SEA"],
   },
 
   arrival: {
@@ -14,8 +14,8 @@ const destinationsSchema = mongoose.Schema({
 const flightSchemma = new mongoose.Schema({
   airport: {
     type: String,
-    enum: ["aus", "dal", "lax", "san", "sea"],
-    default: "san",
+    enum: ["SAN", "DAL", "LAX", "SAN", "SEA"],
+    default: "SAN",
   },
 
   destinations: [destinationsSchema],

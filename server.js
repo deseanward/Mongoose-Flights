@@ -43,6 +43,19 @@ app.get("/flights/new", (req, res) => {
   }
 });
 
+// ----- Show Flight Details ----- //
+app.get("/flights/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const flight = await Flight.findById(id);
+    // res.send(flight);
+    res.render("Show", { flight });
+  } catch (error) {
+    console.log("Error fetching the flight:", error);
+  }
+});
+
 // ***** API ROUTES ***** //
 // Add The Flight to the database
 app.post("/api/flights", async (req, res) => {

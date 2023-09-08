@@ -21,6 +21,7 @@ function New({ airlineErr = null, flightErr = null }) {
             <option value='Select Airport'>Select Airport...</option>
             {airports.map((airport) => (
               <option
+                key={airport}
                 value={airport}
                 className='cursor-pointer'
                 selected={airport === "SAN"}
