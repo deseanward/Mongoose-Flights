@@ -17,7 +17,7 @@ function Show({ flight }) {
   flight = capitalize(flight);
 
   const arrivalDate = new Date().toISOString().slice(0, 16);
-  const destinations = ["SAN", "DAL", "LAX", "SAN", "SEA"];
+  const destinations = ["AUS", "DAL", "LAX", "SAN", "SEA"];
 
   return (
     <DefaultLayout>
@@ -57,7 +57,7 @@ function Show({ flight }) {
               <section className='flex flex-col mb-8'>
                 <label className='font-bold'>Destinations</label>
                 <select
-                  name='destination'
+                  name='airport'
                   className='cursor-pointer p-3 text-xl rounded-lg mb-2'
                 >
                   <option value='Select Airport' selected>
