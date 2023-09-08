@@ -6,16 +6,29 @@ function New({ airlineErr = null, flightErr = null }) {
   const fError = flightErr;
 
   // Default flight Booking Date
-  let bookingDate = new Date().toISOString().slice(0, 16);
-
-
-  console.log(bookingDate);
-
+  const bookingDate = new Date().toISOString().slice(0, 16);
+  const airports = ["AUS", "DAL", "LAX", "SAN", "SEA"];
   return (
     <DefaultLayout>
       <h2 className='font-bold text-2xl'>Create Flight</h2>
       <form className='w-[600px]' action='/api/flights' method='post'>
         <div className='flex flex-col gap-y-2'>
+          <label>Airport</label>
+          <select
+            name='airport'
+            className='cursor-pointer p-3 text-xl rounded-lg'
+          >
+            <option value='Select Airport'>Select Airport...</option>
+            {airports.map((airport) => (
+              <option
+                value={airport}
+                className='cursor-pointer'
+                selected={airport === "SAN"}
+              >
+                {airport}
+              </option>
+            ))}
+          </select>
           <label>Airline</label>
           <input
             type='text'
