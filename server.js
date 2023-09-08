@@ -4,6 +4,7 @@ const connectDB = require("./config/database");
 const jsxEngine = require("jsx-view-engine");
 require("dotenv").config();
 const Flight = require("./models/flight");
+const methodOverride = require("method-override");
 
 const app = express();
 const PORT = 3000;
@@ -16,6 +17,7 @@ app.engine("jsx", jsxEngine());
 // Encode and Parse JSON Data
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(methodOverride("_method"));
 
 // ***** View Routes ***** //
 app.get("/", (req, res) => {
@@ -89,6 +91,26 @@ app.post("/api/flights", async (req, res) => {
       airlineErr: aError,
       flightErr: fError,
     });
+  }
+});
+
+// Update Flight Info
+app.put("/api/flights/:id", async (req, res) => {
+  const { id } = req.params;
+  // const { destination } = req.body;
+  console.log(req.body);
+  try {
+    const flightToUpdate = await Flight.findById(id);
+    flightToUpdate.destinations.push(req.body);
+
+    const updatedFlight = await Flight.findByIdAndUpdate(id, flightToUpdate, {
+      new: true,
+    });
+
+    console.log(updatedFlight);
+    res.redirect(`/flights/${id}`);
+  } catch (error) {
+    console.log("An error occurred: ", error);
   }
 });
 

@@ -5,9 +5,10 @@ function New({ airlineErr = null, flightErr = null }) {
   const aError = airlineErr;
   const fError = flightErr;
 
-  // Default flight Booking Date
+  
   const bookingDate = new Date().toISOString().slice(0, 16);
   const airports = ["AUS", "DAL", "LAX", "SAN", "SEA"];
+
   return (
     <DefaultLayout>
       <h2 className='font-bold text-2xl'>Create Flight</h2>
