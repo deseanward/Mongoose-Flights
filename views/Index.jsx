@@ -1,17 +1,21 @@
 const React = require("react");
+const Landing = require("./Landing");
+
 const { default: DefaultLayout } = require("./layout/layout");
 
 function Flights(allFlights) {
   const flights = allFlights.allFlights;
 
   const logos = {
-    united: "https://theoagroup.org/wp-content/uploads/2021/12/united-airlines-logo_2.png",
+    united:
+      "https://theoagroup.org/wp-content/uploads/2021/12/united-airlines-logo_2.png",
 
-    american: "https://s202.q4cdn.com/986123435/files/doc_downloads/logos/american-airlines/aa_aa__vrt_rgb_grd_pos.png",
+    american:
+      "https://s202.q4cdn.com/986123435/files/doc_downloads/logos/american-airlines/aa_aa__vrt_rgb_grd_pos.png",
 
-    southwest: "https://logos-world.net/wp-content/uploads/2020/10/Southwest-Airlines-Emblem.png"
+    southwest:
+      "https://logos-world.net/wp-content/uploads/2020/10/Southwest-Airlines-Emblem.png",
   };
-
 
   // Formatting of Flight Airline display
   const capitalize = (flight) => {
@@ -26,7 +30,9 @@ function Flights(allFlights) {
   return (
     <DefaultLayout>
       <div className='w-[600px] rounded-md'>
-        <h2 className='font-bold text-2xl mb-4'>Departures</h2>
+        <h2 className='font-bold text-2xl mb-4'>
+          {flights ? "Departures" : ""}
+        </h2>
 
         {flights ? (
           flights.map((flight) => {
@@ -81,7 +87,7 @@ function Flights(allFlights) {
             );
           })
         ) : (
-          <h2>No Flights Today!</h2>
+          <Landing />
         )}
       </div>
     </DefaultLayout>

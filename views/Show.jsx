@@ -112,7 +112,7 @@ function Show({ flight }) {
                 <a href={`/flights/`}>
                   <input
                     type='button'
-                    value='Back'
+                    value='Cancel'
                     className='border-2 border-gray-300 focus:border-gray-500 rounded-md w-fit outline-none py-2 px-4 hover:bg-[#09507C] hover:text-white cursor-pointer'
                   />
                 </a>

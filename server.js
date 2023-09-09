@@ -21,6 +21,10 @@ app.use(methodOverride("_method"));
 
 // ***** View Routes ***** //
 app.get("/", (req, res) => {
+  res.redirect("/landing");
+});
+
+app.get("/landing", (req, res) => {
   res.render("Landing");
 });
 

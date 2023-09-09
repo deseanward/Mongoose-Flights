@@ -69,11 +69,21 @@ function New({ airlineErr = null, flightErr = null }) {
             className='border-2 border-gray-300 focus:border-gray-500 rounded-md outline-none  p-2 mb-8'
           />
 
-          <input
-            type='submit'
-            value='Create Flight'
-            className='border-2 border-gray-300 focus:border-gray-500 rounded-md w-fit outline-none  p-2 hover:bg-[#09507C] hover:text-white cursor-pointer'
-          />
+          <section className="flex gap-2">
+            <input
+              type='submit'
+              value='Create Flight'
+              className='border-2 border-gray-300 focus:border-gray-500 rounded-md w-fit outline-none  p-2 hover:bg-[#09507C] hover:text-white cursor-pointer'
+            />
+            
+            <a href={`/flights/`}>
+              <input
+                type='button'
+                value='Cancel'
+                className='border-2 border-gray-300 focus:border-gray-500 rounded-md w-fit outline-none py-2 px-4 hover:bg-[#09507C] hover:text-white cursor-pointer'
+              />
+            </a>
+          </section>
         </div>
       </form>
     </DefaultLayout>
